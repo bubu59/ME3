@@ -32,13 +32,14 @@ const Navbar = () => {
 
     return (
         <Container>
-            <User>
+            {currentUser && <><User>
                 {currentUser.name}
             </User>
-            <User>
-                {currentUser.password}
-            </User>
-            <Logout onClick={handleCLick}>Logout</Logout>
+                <User>
+                    {currentUser.password}
+                </User>
+                <Logout onClick={handleCLick}>Logout</Logout>
+            </>}
         </Container>
     )
 }
