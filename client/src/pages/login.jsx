@@ -23,7 +23,7 @@ const Input = styled.input`
 
 const Button = styled.button``
 
-const login = () => {
+const Login = () => {
     return (
         <Container>
             <Wrapper>
@@ -38,4 +38,4 @@ const login = () => {
     )
 }
 
-export default login
+export default Login

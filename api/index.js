@@ -1,6 +1,7 @@
 import express from "express"
 import mongoose from "mongoose"
 import dotenv from "dotenv"
+import authRoutes from "./routes/auth.js"
 
 const app = express()
 dotenv.config()
@@ -12,6 +13,10 @@ const connect = () => {
         throw err
     })
 }
+
+//this tells app to be able to use json files 
+app.use(express.json())
+app.use("/api/auth", authRoutes)
 
 app.listen(8800, () => {
     connect()
