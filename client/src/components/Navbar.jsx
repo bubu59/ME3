@@ -18,6 +18,7 @@ const User = styled.div`
 const Logout = styled.button``
 
 
+
 const Navbar = () => {
 
     const { currentUser } = useSelector(state => state.user)
