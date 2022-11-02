@@ -26,12 +26,24 @@ const Input = styled.input`
 
 const Button = styled.button``
 
+const Error = styled.p`
+    color: red;
+    text-align:center
+`
+const Message = styled.span`
+    color: teal;
+    text-align:center
+    
+`
+
 const Register = () => {
 
     const [inputs, setInputs] = useState({
-        username: "",
+        name: "",
         password: ""
     })
+
+    console.log(inputs)
 
     const [err, setError] = useState(null)
 
@@ -55,13 +67,14 @@ const Register = () => {
             <Wrapper>
                 <Title>SIGN UP</Title>
                 <Form>
-                    <Input required type="text" placeholder="username" name="username" onChange={handleChange} />
+                    <Input required type="text" placeholder="username" name="name" onChange={handleChange} />
                     <Input required type="password" placeholder="password" name="password" onChange={handleChange} />
                     <Button onClick={handleSubmit}>REGISTER</Button>
-                    {err && <p>{err}</p>}
-                    <span>
+                    {err && <Error>{err}</Error>}
+                    <Message>
                         Do you have an account?
-                    </span>
+                        <Link to="/login">Login</Link>
+                    </Message>
                 </Form>
             </Wrapper>
         </Container>

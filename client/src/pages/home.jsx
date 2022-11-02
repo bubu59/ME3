@@ -13,6 +13,7 @@ const home = () => {
         <Container>
             <Navbar />
         </Container>
+
     )
 }
 

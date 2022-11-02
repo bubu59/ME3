@@ -15,7 +15,7 @@ export const signup = async (req, res, next) => {
         await newUser.save()
         res.status(200).json("User has been created!")
     } catch (err) {
-        next(err)
+        return res.status(400).json("User has been created!")
     }
 }
 
@@ -30,9 +30,9 @@ export const signin = async (req, res, next) => {
         const isCorrect = await bcrypt.compare(req.body.password, user.password)
         if (!isCorrect) return res.status(400).json("Wrong password!")
 
-        res.status(200).json("Login successful!")
+        return res.json(user)
     } catch (err) {
-        next(err)
+        return res.status(404).json("Wrong credentials!")
     }
 }
 
